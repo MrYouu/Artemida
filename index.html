@@ -1,0 +1,112 @@
+<!--The HTML code is property to Mr. You (Kristiyan Valchev) and can only be viewed-->
+<!--If you want to use part of the code, please first contact me: mr.youdevelopment@gmail.com-->
+
+<html id = "html">
+    <head>
+        <link href = "https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel = "stylesheet">
+        <link type = "text/css" rel = "stylesheet" href = "Files/Style.css">
+        <link rel = "icon" href = "Images/Logo.png" type = "image" sizes = "16x16">
+
+        <meta charset = "utf-8">
+        <meta name = "description" content = "This is a website for ammunition">
+        <meta name = "keywords" content = "..., ...">
+        <meta name = "author" content = "Kristiyan Valchev">
+        <meta name = "viewport" content = "width = device-width, user-scalable = no, initial-scale = 1">
+        
+        <script type = "text/javascript" src = "Files/Functions.js"></script>
+        <script src = "https://kit.fontawesome.com/190623e0b3.js" crossorigin = "anonymous"></script>
+
+        <title>Артемида</title>
+    </head>
+
+    <body id = "body">
+        <!-- #region Loader -->
+        <div class = "Loader">
+            <div class = "loaderLine"></div>
+            <div class = "loaderLine"></div>
+            <div class = "loaderLine"></div>
+            <div class = "loaderLine"></div>
+            <div class = "loaderLine"></div>
+            <h1>Loading . . .</h1>
+        </div>
+
+        <script>
+            window.addEventListener("load", function ()
+			{
+				const Loader = document.querySelector(".Loader")
+				Loader.className += " hidden";
+            });
+
+            window.scroll(
+            {
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+		</script>
+        <!-- #endregion Loader -->
+
+        <div class = "sideMenu">
+            <a href = "#">Каталог</a>
+            <a href = "#" style = "top: 140;">Контакти</a>
+
+            <div class = "linkBoxx">
+                <a href = "https://www.facebook.com/huntingshopARTEMIDA/" class = "fab fa-facebook-f" target = "_blank"></a>
+                <a href = "https://www.google.com/maps/dir/43.850532,25.9487911/43.8496023,25.9526144/@43.8502658,25.9487051,17z/data=!3m1!4b1!4m4!4m3!1m1!4e1!1m0" class = "fas fa-map-marker-alt" target = "_blank"></a>
+            </div>
+        </div>
+
+        <div class = "pageHolder" id = "pageHolder">
+            <div class = "topBar">
+                <a href = "index.html" class = "Logo"><img src = "Images/Logo.png"></a>
+
+                <a href = "#">Контакти <div></div><div></div></a>
+                <a href = "#">Каталог <div></div><div></div></a>
+            </div>
+
+            <div class = "sideBox">
+                <div onclick = "sideMenu()" class = "threeLineBitton">
+                    <div id = "line1"></div>
+                    <div id = "line2"></div>
+                    <div id = "line3"></div>
+                </div>
+            </div>
+
+            <div class = "mainBox">
+                <div class = "Heilight">
+                    <img src = "Images/mainPageImage.png">
+                    <div class = "Shadow"></div>
+                </div>
+            </div>
+
+            <h3 class = "subTitle">Оръжеен магазин</h3>
+            <h1 class = "Title">АРТЕМИДА</h1>
+
+            <p class = "descriptionText">
+                Оръжеен магазин "Артемида" предлага на своите клиенти голямо
+                разнообразие от оръжия, боеприпаси, поддръжка на оръжие, екипировка
+                и други аксесоари за лова.
+            </p>
+
+            <a href = "#" class = "mainButton">Към каталога</a>
+
+            <div class = "linkBox">
+                <a href = "https://www.facebook.com/huntingshopARTEMIDA/" class = "fab fa-facebook-f" target = "_blank"></a>
+                <a href = "https://www.google.com/maps/dir/43.850532,25.9487911/43.8496023,25.9526144/@43.8502658,25.9487051,17z/data=!3m1!4b1!4m4!4m3!1m1!4e1!1m0" class = "fas fa-map-marker-alt" target = "_blank"></a>
+                <a href = "mailto: artemida-nnn@mail.bg" class = "fas fa-envelope"></a>
+                <a href = "tel: 088 850 4824" class = "fas fa-phone-alt"></a>
+            </div>
+
+            <div class = "bottomBar">
+                <a href = "#" class = "Active">Начало <div></div></a>
+                <a href = "#">Каталог <div></div></a>
+                <a href = "#">Контакти <div></div></a>
+
+                <p class = "Credits">
+                    <powerd>Site powered by <phx>Phoenix Development</phx>.</powerd>
+                    <managed> Managed by <my>Mr.You</my></managed>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
