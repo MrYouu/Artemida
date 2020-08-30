@@ -1,0 +1,1081 @@
+/*The CSS code is property to Mr. You (Kristiyan Valchev) and can only be viewed*/
+/*If you want to use part of the code, please first contact me: mr.youdevelopment@gmail.com*/
+
+html
+{
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body
+{
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    background-color: #4e4c4d;
+    overflow-x: hidden;
+}
+
+/*#region Scrow bar */
+::-webkit-scrollbar
+{
+	width: 10px;
+}
+
+::-webkit-scrollbar-track
+{
+    background-color: #2c2a2b;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background: #4e4c4d;
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+	background: #4d798b;
+}
+/*#endregion Scrow bar */
+
+/*#region Loader */
+.Loader
+{
+	display: flex;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: #2c2a2b;
+	justify-content: center;
+	align-items: center;
+    overflow: hidden;
+    
+	z-index: 99;
+}
+
+.Loader h1
+{
+    position: absolute;
+    width: calc(100% - 30px);
+    top: calc(50% - 50px);
+    left: 15px;
+    font-size: 30px;
+    font-weight: normal;
+    color: #fafafa;
+}
+
+.Loader .loaderLine
+{
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    top: calc(50% - 5px);
+    left: 0;
+
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    width: 0%;
+}
+
+.Loader .loaderLine:nth-child(1)
+{
+    background-color: #ff6f9a;
+    animation-name: loaderLine01;
+}
+
+.Loader .loaderLine:nth-child(2)
+{
+    background-color: #2c2a2b;
+    animation-name: loaderLine02;
+}
+
+.Loader .loaderLine:nth-child(3)
+{
+    background-color: #c7a1c3;
+    animation-name: loaderLine03;
+}
+
+.Loader .loaderLine:nth-child(4)
+{
+    background-color: #2c2a2b;
+    animation-name: loaderLine04;
+}
+
+.Loader .loaderLine:nth-child(5)
+{
+    background-color: #8ed2ec;
+    animation-name: loaderLine05;
+}
+
+.Loader.hidden
+{
+	animation: fadeOutt 1s;
+	animation-fill-mode: forwards;
+	overflow-y: visible;
+}
+
+@keyframes fadeOutt
+{
+	100%
+	{
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+@keyframes loaderLine01
+{
+    0% { width: 0%; }
+    30% { width: 100%; }
+    70% { width: 100%; }
+    100% { width: 0%; }
+}
+
+@keyframes loaderLine02
+{
+    0% { width: 0%; }
+    35% { width: 100%; }
+    65% { width: 100%; }
+    100% { width: 0%; }
+}
+
+@keyframes loaderLine03
+{
+    0% { width: 0%; }
+    40% { width: 100%; }
+    60% { width: 100%; }
+    100% { width: 0%; }
+}
+
+@keyframes loaderLine04
+{
+    0% { width: 0%; }
+    45% { width: 100%; }
+    55% { width: 100%; }
+    100% { width: 0%; }
+}
+
+@keyframes loaderLine05
+{
+    0% { width: 0%; }
+    50% { width: 100%; }
+    100% { width: 0%; }
+}
+/*#endregion Loader */
+
+/*#region The hall page */
+.pageHolder
+{
+    position: absolute;
+    width: 100%;
+    height: 1100px;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: #2c2a2b;
+}
+
+.pageHolder img.pageTexture
+{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    mix-blend-mode: darken;
+    filter: invert(1);
+    opacity: 0;
+    overflow: hidden;
+
+    z-index: 1;
+}
+/*#endregion The hall page */
+
+/*#region Top bar */
+.topBar
+{
+    position: absolute;
+    width: calc(100% - 200px);
+    height: 150px;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+
+    z-index: 30;
+
+    animation: dropDown .5s ease-out forwards .2s;
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+.topBar a
+{
+    float: right;
+    position: relative;
+    top: 62;
+    right: 30;
+    font-size: 26px;
+    font-weight: normal;
+    color: #fafafa;
+    padding: 12px 30px;
+
+    animation: fadeIn .3s ease-out forwards .25s;
+    opacity: 0;
+}
+
+.topBar a.Logo
+{
+    float: left;
+    position: absolute;
+    width: 140px;
+    height: 92px;
+    top: 32;
+    left: 60;
+}
+
+.topBar img
+{
+    position: absolute;
+    width: 200px;
+    top: 0;
+    left: 0;
+}
+
+.topBar img:hover
+{
+    width: 210px;
+    transform: translateY(-2.5px) translateX(-2.5px);
+}
+
+.topBar a div
+{
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    top: auto;
+    bottom: 0;
+    left: 5%;
+}
+
+.topBar a div:nth-child(1)
+{
+    background-color: #ff6f9a;
+}
+
+.topBar a div:nth-child(2)
+{
+    background-color: #8ed2ec;
+    transition-delay: .15s;
+}
+
+.topBar a:hover div
+{
+    width: 90%;
+}
+
+.threeLineBitton
+{
+    display: none;
+    position: absolute;
+    width: 70px;
+    height: 40px;
+    top: 70;
+    left: calc(50% - 35px);
+    background-color: transparent;
+
+    animation: fadeIn .3s ease-out forwards .25s;
+    opacity: 0;
+}
+
+.threeLineBitton div
+{
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    background-color: #fafafa;
+}
+
+.threeLineBitton div:nth-child(1)
+{
+    top: 0;
+}
+
+.threeLineBitton div:nth-child(2)
+{
+    top: calc(50% - 2px);
+}
+
+.threeLineBitton div:nth-child(3)
+{
+    bottom: 0;
+}
+
+.threeLineBitton:hover div
+{
+    background-color: #d8d8d8;
+}
+/*#endregion Top bar */
+
+/*#region Side menu */
+.sideMenu
+{
+    float: right;
+    position: absolute;
+    width: 200px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #4e4c4d;
+}
+
+.sideMenu a
+{
+    float: right;
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    top: 100;
+    right: 0;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 30px;
+    color: #fafafa;
+}
+
+.sideMenu a:hover
+{
+    color: #ff6f9a;
+}
+
+.sideMenu .linkBoxx
+{
+    float: right;
+    position: absolute;
+    width: 160px;
+    height: 40px;
+    bottom: 20;
+    right: 20;
+    background-color: transparent;
+    /*border: solid 1px greenyellow;*/
+}
+
+.sideMenu .linkBoxx a
+{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    left: 0;
+    font-size: 24px;
+    text-align: center;
+    line-height: 40px;
+    color: #fafafa;
+}
+
+.sideMenu .linkBoxx a:hover
+{
+    color: #8ed2ec;
+}
+/*#endregion Side menu */
+
+/*#region Boxes */
+.sideBox
+{
+    float: right;
+    position: absolute;
+    width: 200px;
+    height: 500px;
+    top: 0;
+    right: 0;
+    background-color: #ff6f9a;
+
+    z-index: 2;
+
+    animation: boxesAnimation .3s ease-out forwards .6s;
+    transform: translateX(700px);
+    opacity: 0;
+}
+
+.mainBox
+{
+    float: right;
+    position: absolute;
+    width: 600px;
+    height: 900px;
+    top: 200;
+    right: 100;
+    background-color: #8ed2ec;
+    box-shadow: 20px -10px 20px #00000030;
+
+    z-index: 2;
+
+    animation: boxesAnimation .3s ease-out forwards .6s;
+    transform: translateX(700px);
+    opacity: 0;
+}
+
+.mainBox .Heilight
+{
+    position: absolute;
+    width: calc(100% - 100px);
+    height: calc(100% - 400px);
+    top: 50;
+    left: 50;
+    border-radius: 100%;
+    background-image: radial-gradient(#d2f2ff, #8ed2ec 70%);
+
+    z-index: 2;
+}
+
+.mainBox img
+{
+    position: absolute;
+    width: 200px;
+    top: 60;
+    left: calc(50% - 75px);
+
+    z-index: 3;
+
+    animation: dropDown .5s ease-out forwards 1s;
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+.mainBox .Shadow
+{
+    position: absolute;
+    width: 500px;
+    height: 200px;
+    top: 250;
+    left: calc(50% - 250px);
+    border-radius: 100%;
+    background-image: radial-gradient(#000000, transparent 50%);
+    opacity: .3;
+
+    z-index: 2;
+
+    animation: shadowDropDown .5s ease-out forwards 1s;
+    transform: translateY(-50px);
+    opacity: 0;
+}
+/*#endregion Boxes */
+
+/*#region Main things */
+.subTitle
+{
+    position: absolute;
+    top: 250;
+    left: 60;
+    font-size: 30px;
+    font-weight: normal;
+    color: #ff6f9a;
+
+    z-index: 4;
+
+    animation: dropDown .5s ease-out forwards .7s;
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+.subTitle:hover
+{
+    color: #8ed2ec;
+}
+
+.Title
+{
+    position: absolute;
+    top: 280;
+    left: 60;
+    font-size: 120px;
+    font-weight: bolder;
+    color: #fafafa;
+
+    z-index: 4;
+
+    animation: dropDown .5s ease-out forwards .8s;
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+.descriptionText
+{
+    position: absolute;
+    width: 500px;
+    height: auto;
+    top: 470;
+    left: 60;
+    font-size: 18px;
+    font-weight: normal;
+    color: #fafafa;
+    opacity: .8;
+
+    z-index: 4;
+
+    animation: dropDown .5s ease-out forwards .9s;
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+.mainButton
+{
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    top: 600;
+    left: 60;
+    font-size: 28px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 50px;
+    color: #fafafa;
+    background-color: #ff6f9a;
+
+    z-index: 4;
+
+    animation: dropDown .5s ease-out forwards 1s;
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+.mainButton:hover
+{
+    background-color: #e75d86;
+}
+/*#endregion Main things */
+
+/*#region Main page */
+.linkBox
+{
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    top: 600;
+    left: 330;
+    background-color: transparent;
+    /*border: solid 1px greenyellow;*/
+
+    z-index: 4;
+
+    animation: dropDown .5s ease-out forwards 1.1s;
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+.linkBox a
+{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    left: 0;
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    color: #fafafa;
+}
+
+.linkBox a:hover
+{
+    color: #8ed2ec;
+}
+/*#endregion Main page */
+
+/*#region Bottom bar */
+.bottomBar
+{
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    top: 900;
+    left: 0;
+    background-color: #462838;
+
+    z-index: 5;
+
+    animation: goUp .5s ease-out forwards 1.2s;
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+.bottomBar a
+{
+    position: absolute;
+    width: 33%;
+    height: 50px;
+    top: calc(50% - 25px - 20px);
+    left: 7;
+    font-size: 30px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 50px;
+    color: #bababa;
+
+    animation: fadeIn .3s ease-out forwards 1.4s;
+    opacity: 0;
+}
+
+.bottomBar a:nth-child(2)
+{
+    left: calc(33% + 7px);
+}
+
+.bottomBar a:nth-child(3)
+{
+    left: calc(66% + 7px);
+}
+
+.bottomBar a div
+{
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    top: auto;
+    bottom: 0;
+    left: 25%;
+    background-color: #806874;
+}
+
+.bottomBar a:hover div
+{
+    width: 50%;
+}
+
+.bottomBar a.Active
+{
+    color: #fafafa;
+}
+
+.bottomBar .Credits
+{
+    position: absolute;
+    width: 100%;
+    top: auto;
+    bottom: 10;
+    text-align: center;
+    color: #a08391;
+
+    animation: fadeIn .3s ease-out forwards 1.45s;
+    opacity: 0;
+}
+
+.bottomBar .Credits powerd:hover phx
+{
+    color: #ff3c00a0;
+    transition: ease .3s;
+}
+
+.bottomBar .Credits managed:hover my
+{
+    color: #61d0fca0;
+    transition: ease .3s;
+}
+
+.bottomBar .Credits:hover
+{
+    color: #806170;
+}
+/*#endregion Bottom bar */
+
+img
+{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+}
+
+a
+{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    transition: ease .3s;
+}
+
+p, div, h1, h2, h3, h4, h5, h6, i, img
+{
+    padding: 0;
+    margin: 0;
+    transition: ease .3s;
+}
+
+/*#region Animations */
+@keyframes dropDown
+{
+    0%
+    {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    100%
+    {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes goUp
+{
+    0%
+    {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100%
+    {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn
+{
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeOut
+{
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes boxesAnimation
+{
+    0%
+    {
+        transform: translateX(700px);
+        opacity: 0;
+    }
+
+    100%
+    {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes shadowDropDown
+{
+    0%
+    {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    100%
+    {
+        transform: translateY(0px);
+        opacity: .3;
+    }
+}
+
+@keyframes line1AnimationOpen
+{
+    0%
+    {
+        top: 0;
+        transform: rotate(0deg);
+    }
+
+    100%
+    {
+        top: calc(50% - 2px);
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes line3AnimationOpen
+{
+    0%
+    {
+        bottom: 0;
+        transform: rotate(0deg);
+    }
+
+    100%
+    {
+        bottom: calc(50% - 2px);
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes line1AnimationClose
+{
+    0%
+    {
+        top: calc(50% - 2px);
+        transform: rotate(-45deg);
+    }
+
+    100%
+    {
+        top: 0;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes line3AnimationClose
+{
+    0%
+    {
+        bottom: calc(50% - 2px);
+        transform: rotate(45deg);
+    }
+
+    100%
+    {
+        bottom: 0;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes defaultAnimation
+{
+    0%
+    {
+
+    }
+
+    100%
+    {
+
+    }
+}
+/*#endregion Animations */
+
+/*#region Media 1300-1000 */
+@media screen and (max-width: 1300px)
+{
+    .Title
+    {
+        top: 290;
+        font-size: 100px;
+    }
+}
+
+@media screen and (max-width: 1200px)
+{
+    .mainBox
+    {
+        width: 400px;
+    }
+
+    .mainBox .Heilight
+    {
+        width: calc(100% - 100px);
+        height: calc(100% - 100px);
+    }
+
+    .mainBox img, .mainBox .Shadow
+    {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1100px)
+{
+
+}
+
+@media screen and (max-width: 1000px)
+{
+
+}
+/*#endregion Media 1300-1000 */
+
+/*#region Media 900-800 */
+@media screen and (max-width: 900px)
+{
+    .topBar a, .linkBox
+    {
+        display: none;
+    }
+
+    .topBar a.Logo, .threeLineBitton
+    {
+        display: unset;
+    }
+}
+
+@media screen and (max-width: 800px)
+{
+    .pageHolder
+    {
+        height: 900px;
+    }
+
+    .sideBox
+    {
+        width: 120px;
+        height: 450px;
+        background-color: #8ed2ec;
+    }
+
+    .mainBox
+    {
+        display: none;
+    }
+
+    .sideMenu a:hover
+    {
+        color: #8ed2ec;
+    }
+
+    .subTitle
+    {
+        top: 220;
+        left: 30;
+        font-size: 24px;
+    }
+
+    .Title
+    {
+        top: 250;
+        left: 30;
+        font-size: 60px;
+    }
+
+    .descriptionText
+    {
+        width: calc(100% - 60px - 120px);
+        top: 380;
+        left: 30;
+        font-size: 16px;
+        opacity: .7;
+    }
+
+    .mainButton
+    {
+        width: 200px;
+        height: 40px;
+        top: 530;
+        left: 30;
+        font-size: 22px;
+        line-height: 40px;
+    }
+
+    .bottomBar
+    {
+        height: 200px;
+        top: 700;
+    }
+
+    .bottomBar a
+    {
+        width: 100%;
+        height: 36px;
+        top: 20;
+        left: 0;
+        font-size: 18px;
+        line-height: 36px;
+    }
+
+    .bottomBar a:nth-child(2)
+    {
+        top: 60;
+        left: 0;
+    }
+
+    .bottomBar a:nth-child(3)
+    {
+        top: 100;
+        left: 0;
+    }
+
+    .bottomBar .Credits
+    {
+        width: calc(100% - 30px);
+        bottom: 10;
+        left: 15;
+        font-size: 12px;
+    }
+}
+/*#endregion Media 900-800 */
+
+/*#region Media 700-600 */
+@media screen and (max-width: 700px)
+{
+
+}
+
+@media screen and (max-width: 600px)
+{
+
+}
+/*#endregion Media 700-600 */
+
+/*#region Media 500-400 */
+@media screen and (max-width: 500px)
+{
+    .topBar a.Logo
+    {
+        width: 60px;
+        height: 46px;
+        top: 50;
+        left: 30;
+    }
+
+    .topBar img
+    {
+        width: 120px;
+    }
+
+    .topBar img:hover
+    {
+        width: 130px;
+    }
+
+    .sideBox
+    {
+        height: 320px;
+    }
+
+    .subTitle
+    {
+        font-size: 16px;
+    }
+
+    .Title
+    {
+        top: 250;
+        font-size: 40px;
+    }
+
+    .descriptionText
+    {
+        width: calc(100% - 60px);
+        top: 340;
+    }
+
+    .mainButton
+    {
+        top: 510;
+        left: calc(50% - 100px);
+    }
+}
+
+@media screen and (max-width: 400px)
+{
+
+}
+/*#endregion Media 500-400 */
+
+/*#region Media 350 */
+@media screen and (max-width: 350px)
+{
+
+}
+/*#endregion Media 350 */
